@@ -39,7 +39,7 @@ async function getOwnerType(owner: string): Promise<"user" | "org" | null> {
 export async function syncRepos(owner: string) {
 	const type = await getOwnerType(owner);
 
-	const repos =
+	let repos =
 		type === "org"
 			? await octokit.paginate(octokit.repos.listForOrg, {
 					type: "public",
@@ -51,6 +51,8 @@ export async function syncRepos(owner: string) {
 					username: owner,
 					per_page: 100,
 				});
+
+	repos = repos.filter((x) => x.size);
 
 	for (const repo of repos) {
 		const query = { owner, name: repo.name };

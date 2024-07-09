@@ -1,6 +1,6 @@
 {
 	"name": "git-insight",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "GitHub activity insights for repos and orgs",
 	"main": "index.js",
 	"scripts": {
