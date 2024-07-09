@@ -1,0 +1,44 @@
+{
+	"name": "git-insight",
+	"version": "0.0.3",
+	"description": "GitHub activity insights for repos and orgs",
+	"main": "index.js",
+	"scripts": {
+		"build": "ncc build src/cli.ts",
+		"lint": "biome check --write ./src",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"git-insight": "./bin/git-insight.js"
+	},
+	"files": ["bin", "dist"],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/smeijer/git-insight.git"
+	},
+	"keywords": ["github", "pulse", "insights"],
+	"author": "Stephan Meijer",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/smeijer/git-insight/issues"
+	},
+	"homepage": "https://github.com/smeijer/git-insight#readme",
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@commander-js/extra-typings": "^12.1.0",
+		"@octokit/rest": "^21.0.0",
+		"@seald-io/nedb": "^4.0.4",
+		"@types/debug": "^4.1.12",
+		"@types/node": "^20.14.10",
+		"commander": "^12.1.0",
+		"date.js": "^0.3.3",
+		"debug": "^4.3.5",
+		"del": "^7.1.0",
+		"env-paths": "^3.0.0",
+		"lefthook": "^1.7.1",
+		"ncc": "^0.3.6",
+		"node-emoji": "^2.1.3",
+		"ora": "^8.0.1",
+		"typescript": "^5.5.3"
+	}
+}
